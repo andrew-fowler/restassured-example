@@ -17,9 +17,6 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.core.Is.is;
 
-/**
- * Created by andrewfowler on 1/30/17.
- */
 public class ExampleTest {
 
     @BeforeClass
@@ -85,8 +82,6 @@ public class ExampleTest {
                     .queryParam("symbols", "GBP,USD")
             .when() .get("/latest")
             .then() .extract().response();
-
-        assertThat(true, is(true));
 
         assertThat(resp.body().path("base").toString(), is(equalTo("DKK")));
 
